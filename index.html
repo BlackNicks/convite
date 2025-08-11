@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Convite - Heitor Circus</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+<style>
+  body {
+    margin: 0;
+    font-family: 'Luckiest Guy', cursive;
+    background: repeating-linear-gradient(
+      45deg,
+      #b22222,
+      #b22222 100px,
+      #f5deb3 100px,
+      #f5deb3 200px
+    );
+    color: #000;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .letreiro-texto {
+    background: #fff8dc;
+    border-radius: 20px;
+    border: 6px solid gold;
+    box-shadow:
+      0 0 25px 6px rgba(255, 215, 0, 0.75),
+      inset 0 0 40px 10px rgba(255, 215, 0, 0.6);
+    max-width: 600px;
+    width: 100%;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    animation: brilho 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes brilho {
+    0% {
+      box-shadow:
+        0 0 15px 3px rgba(255, 215, 0, 0.5),
+        inset 0 0 20px 5px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+      box-shadow:
+        0 0 40px 8px rgba(255, 215, 0, 0.9),
+        inset 0 0 50px 10px rgba(255, 215, 0, 0.7);
+    }
+  }
+
+  h1 {
+    font-family: 'Anton', sans-serif;
+    color: #b22222;
+    font-size: 50px;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow:
+      2px 2px 0 #fff,
+      4px 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  p, ul {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    margin: 10px 0;
+    line-height: 1.5;
+    text-align: left;
+    color: #000;
+  }
+
+  ul {
+    max-width: 460px;
+    padding-left: 25px;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  #contador {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 22px;
+    color: #b22222;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .confirmacao-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  input[type="text"] {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 12px 15px;
+    border: 3px solid #8b0000;
+    border-radius: 12px;
+    width: 250px;
+    box-shadow: 0 0 6px rgba(139,0,0,0.7);
+    transition: border-color 0.3s ease;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  input[type="text"]:focus {
+    border-color: #b22222;
+    outline: none;
+  }
+
+  button {
+    font-family: 'Luckiest Guy', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    background: #b22222;
+    color: white;
+    border: 3px solid #8b0000;
+    border-radius: 12px;
+    padding: 12px 30px;
+    cursor: pointer;
+    box-shadow: 0 0 14px rgba(178,34,34,0.8);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    min-width: 140px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  button:hover, button:focus {
+    background: #8b0000;
+    transform: scale(1.05);
+  }
+
+  .confirmacao-msg {
+    margin-top: 25px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 18px rgba(0,0,0,0.2);
+  }
+
+  .sucesso {
+    background: #d4edda;
+    color: #155724;
+    border: 2px solid #c3e6cb;
+  }
+
+  .erro {
+    background: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+  }
+
+  @media (max-width: 600px) {
+    .letreiro-texto {
+      max-width: 100%;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    p, ul, ul li {
+      font-size: 22px;
+    }
+
+    .confirmacao-container {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      font-size: 20px;
+      padding: 14px 15px;
+      margin: 0;
+    }
+
+    button {
+      width: 100%;
+      font-size: 22px;
+      min-width: unset;
+      padding: 14px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="letreiro-texto">
+
+  <h1>HEITOR CIRCU'S </h1>
+
+  <div id="contador"></div>
+
+  <p>🎪 Olá! Que alegria ter você aqui no Heitor Circus!</p>
+  <p>Sua presença é o que vai deixar nosso picadeiro ainda mais especial.</p>
+  <p>Para garantir seu lugar nessa festa mágica, confirme sua presença abaixo.</p>
+  <p>Estamos ansiosos para comemorar juntos!</p>
+
+  <h1>PRESENTES</h1>
+
+  <p>Quer me presentear? Aqui vai uma ajudinha!</p>
+
+  <p>
+    Se você quiser me mimar nesse dia especial, preparei com carinho algumas sugestões que podem te ajudar na escolha do presente ❤️<br>
+    Na listinha você encontra meu tamanho de roupa, número do calçado e alguns brinquedos que eu adoro!<br>
+    Mas lembre-se: sua presença já é um presentão!!
+  </p>
+
+  <p><strong>PRA PASSAR O MEU TEMPO BRINCANDO, GOSTO DE:</strong></p>
+
+  <ul>
+    <li>Caminhões grandes ou articulados</li>
+    <li>Carretas com partes móveis</li>
+    <li>Tratores e máquinas de construção (escavadeiras, guindastes)</li>
+    <li>Carros de fricção ou controle remoto</li>
+    <li>Motos, quadriciclos ou ônibus de brinquedo</li>
+    <li>Conjuntos tipo Hot Wheels</li>
+    <li>Brinquedos de montar com parafusos e chaves (tipo bancadas de ferramentas)</li>
+    <li>Blocos de montar</li>
+    <li>Conjuntos de construção com ímã ou blocos criativos</li>
+  </ul>
+
+  <p><strong>E se quiser me deixar ainda mais estiloso:</strong><br>
+  roupas: tamanho 4<br>
+  sapato: número 24</p>
+
+  <h1>CONFIRME SUA PRESENÇA</h1>
+
+  <p>Digite seu nome abaixo para confirmar:</p>
+
+  <form id="rsvp-form" class="confirmacao-container" novalidate>
+    <input type="text" name="nome" placeholder="Seu nome e sobrenome" autocomplete="off" required />
+    <button type="submit">Confirmar</button>
+  </form>
+
+  <div class="confirmacao-msg" id="mensagem"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+  // CONTADOR
+  function atualizarContador() {
+    const dataFesta = new Date("2025-09-15T18:00:00");
+    const agora = new Date();
+    const diff = dataFesta - agora;
+
+    const contador = document.getElementById('contador');
+
+    if (diff <= 0) {
+      contador.textContent = "🎈 A festa já começou!";
+      return;
+    }
+
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutos = Math.floor((diff / (1000 * 60)) % 60);
+
+    contador.textContent =
+      `⏳ Faltam ${dias} dias, ${horas} horas e ${minutos} minutos para a festa!`;
+  }
+
+  setInterval(atualizarContador, 60000); // Atualiza a cada 1 minuto
+  atualizarContador();
+
+  // FORMULÁRIO + CONFETES
+  document.getElementById('rsvp-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const nome = e.target.nome.value.trim();
+    const mensagem = document.getElementById('mensagem');
+
+    if (!nome) {
+      mensagem.textContent = "❌ Por favor, digite um nome.";
+      mensagem.style.color = "red";
+      return;
+    }
+
+    try {
+      const consulta = await fetch(`https://sheetdb.io/api/v1/v377vqgjnjrv1/search?nome=${encodeURIComponent(nome)}`);
+      const resultado = await consulta.json();
+
+      if (resultado.length > 0) {
+        mensagem.textContent = "⚠️ Esse nome já confirmou presença!";
+        mensagem.style.color = "orange";
+        return;
+      }
+
+      const resposta = await fetch("https://sheetdb.io/api/v1/v377vqgjnjrv1", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: { nome: nome } })
+      });
+
+      if (resposta.ok) {
+        mensagem.textContent = "🎉 Presença confirmada com sucesso!";
+        mensagem.style.color = "green";
+        e.target.reset();
+
+        // Solta confete!
+        confetti({
+          particleCount: 100,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      } else {
+        mensagem.textContent = "❌ Erro ao confirmar. Tente novamente.";
+        mensagem.style.color = "red";
+      }
+    } catch (error) {
+      mensagem.textContent = "❌ Erro de conexão. Tente novamente.";
+      mensagem.style.color = "red";
+    }
+  });
+</script>
+
+</body>
+</html>
